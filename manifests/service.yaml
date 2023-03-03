@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service1
+spec:
+  selector:
+    app.kubernetes.io/name: my-app
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: pod_port1
