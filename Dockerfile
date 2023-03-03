@@ -4,6 +4,8 @@ WORKDIR /app
 
 ADD server.py /app
 
+COPY /templates /app
+
 RUN pip install flask
 
 CMD ["python3", "server.py"]

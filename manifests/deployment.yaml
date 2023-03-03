@@ -1,9 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment
+  name: my-app
   labels:
     app: my-app1
+  namespace: test
 spec:
   replicas: 1
   selector:
@@ -16,6 +17,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: robertxd98/flask-app
+        image: robertxd98/flask-app:0.0.2
         ports:
         - containerPort: 5000
+          name: flask-app
