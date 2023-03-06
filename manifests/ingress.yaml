@@ -1,9 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: myingress
+  name: demo
   labels:
-    name: myingress
+    name: demo
 spec:
   rules:
   - host: demo.host.local
@@ -13,6 +13,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: myapp
+            name: demo
             port: 
               number: 80

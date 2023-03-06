@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: demo
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: demo
   template:
     metadata:
       labels:
-        app: myapp
+        app: demo
     spec:
       containers:
-      - name: myapp
-        image: "robertxd98/demo-app:0.0.1"
+      - name: demo
+        image: "robertxd98/demo-app:0.0.2"
         resources:
           limits:
             memory: "128Mi"
