@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
-  labels:
-    app: my-app1
-  namespace: test
+  name: myapp
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: my-app1
+      app: myapp
   template:
     metadata:
       labels:
-        app: my-app1
+        app: myapp
     spec:
       containers:
-      - name: flask-app
-        image: robertxd98/flask-app:0.0.2
+      - name: myapp
+        image: "robertxd98/demo-app:0.0.1"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 5000
-          name: flask-app
