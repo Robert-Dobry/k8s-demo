@@ -1,11 +1,13 @@
 # k8s-demo
 
-Build Docker image: docker build -t <registry/repository:tag> .
+### prerequisites
 
-Push Docker image: docker push <registry/repository:tag>
+- Docker
+- Kubernetes cluster
+  - local or from cloud provider
+    - minikube, kind, kubeadm.... 
+    - Linode, AWS, Azure, GCloud...
+- kubectl:
+  - binary to communicate with our cluster
 
-Setup kubernetes cluster
-  - minikube (locally)
-  - obtain kubeconfig from cloud provider
-  - create namespace for deployment: `kubectl create ns <name>` or `kubectl apply -f manifests/namespace.yaml`
-  - install demo application using helm: `helm install -n <namespace> <release_name> ./charts/demo` or apply manifests with kubectl
+- some application we want to deploy to cluster
